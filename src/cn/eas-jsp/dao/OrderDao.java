@@ -70,17 +70,14 @@ public class OrderDao {
     }
 
     public void cancelOrder(int id) {
-        //boolean result = false;
         try {
             query = "delete from orders where o_id=?";
             pst = this.con.prepareStatement(query);
             pst.setInt(1, id);
             pst.execute();
-            //result = true;
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.print(e.getMessage());
         }
-        //return result;
     }
 }
